@@ -1,0 +1,118 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              06/30/2021 18:16:55 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "LCD1602.h"
+   3          #include "OneWire.h"
+   4          #include "DS18B20.h"
+   5          #include "delay.h"
+   6          #include "key.h"
+   7          //#include "timer0.h"
+   8          #include "bz.h"
+   9          #include "16key.h"
+  10          
+  11          
+  12          unsigned char keyn,keyb,bj=0;
+  13          float t,ts;
+  14          char TL,TH;
+  15          void main()
+  16          {     
+  17   1             DS18B20_ConvertT();
+  18   1        delay(1000);
+  19   1      //TH=AT24C02_ReadByte(0);
+  20   1      //bj=AT24C02_ReadByte(1);
+  21   1      //   Timer0Init();
+  22   1        if(TH>125 || TL<-55 || TH<=TL)
+  23   1        {TH=20;TL=15;}
+  24   1      
+  25   1      
+  26   1         LCD_Init();
+  27   1        LCD_ShowString(1,1,"T:");
+  28   1        LCD_ShowString(2,1,"TH:");
+  29   1          LCD_ShowString(2,9,"TL:");
+  30   1        LCD_ShowString(1,11,"O");
+  31   1        LCD_ShowSignedNum(2,4,TH,3);
+  32   1        LCD_ShowSignedNum(2,12,TL,3);
+  33   1      
+  34   1      //  ackt=OneWire_Init();   
+  35   1      //  LCD_ShowNum(2,1,ackt,3);   
+  36   1            while(1)
+  37   1           { 
+  38   2            keyb=key16();
+  39   2             keyn=key();
+  40   2             DS18B20_ConvertT();
+  41   2             t=DS18B20_ReadT();
+  42   2             LCD_ShowNum(1,4,ts,3);
+  43   2             LCD_ShowChar(1,7,'.');
+  44   2             LCD_ShowNum(1,8,(unsigned long)(ts*100)%100,2);
+  45   2      
+  46   2             if(t<0)
+  47   2               {
+  48   3               LCD_ShowChar(1,3,'-');  ts=-t;}
+  49   2            
+  50   2             else {LCD_ShowChar(1,3,'+');ts=t;}
+  51   2             if(keyb)
+  52   2             {     
+  53   3                   if(keyb==1)
+  54   3             {
+C51 COMPILER V9.60.0.0   MAIN                                                              06/30/2021 18:16:55 PAGE 2   
+
+  55   4             TH++;
+  56   4               if(TH>125) TH=125; 
+  57   4             }
+  58   3              if(keyb==2)
+  59   3             {
+  60   4             TH--;
+  61   4              if(TH<=TL){TH++;}      
+  62   4             }
+  63   3              if(keyb==3)
+  64   3             {
+  65   4             TL++;
+  66   4               if(TL>=TH){TL--;}       
+  67   4             }
+  68   3              if(keyb==4)
+  69   3             {
+  70   4             TL--;
+  71   4                 if(TL<-55) TL=-55; 
+  72   4      
+  73   4             }
+  74   3          LCD_ShowSignedNum(2,4,TH,3);
+  75   3          LCD_ShowSignedNum(2,12,TL,3);
+  76   3      //    AT24C02_WriteByte(0,TH);
+  77   3      //delay(5);
+  78   3      //AT24C02_WriteByte(1,bj);
+  79   3      //delay(5);
+  80   3             }
+  81   2              if(keyn)
+  82   2             {   
+  83   3               if(keyn==1)  {bj=0;  LCD_ShowString(1,11,"O");bztime(50);}
+  84   3               if(keyn==2)  {bj=1;  LCD_ShowString(1,11,"S");bztime(50);}
+  85   3             }
+  86   2             if(t>TH && bj==0) {  LCD_ShowString(1,13,"OV:H");bztime(300);}
+  87   2              else if(t<TL && bj==0) {  LCD_ShowString(1,13,"OV:L");bztime(500);}
+  88   2      else LCD_ShowString(1,13,"       ");
+  89   2       }
+  90   1           }
+  91                
+  92          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    630    ----
+   CONSTANT SIZE    =     33    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     13    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

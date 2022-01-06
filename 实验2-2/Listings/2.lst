@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  2                                                                    04/15/2021 19:22:16 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\2.obj
+ASSEMBLER INVOKED BY: D:\keil5\C51\BIN\A51.EXE 2.asm SET(SMALL) DEBUG PRINT(.\Listings\2.lst) OBJECT(.\Objects\2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 8034              2     SJMP MAIN
+0030                   3     ORG 0030H
+0030 84                4     BCD: DIV AB
+0031 F6                5     MOV @R0,A
+0032 E5F0              6     MOV A,B
+0034 08                7     INC R0
+0035 22                8     RET
+0036 7463              9     MAIN: MOV A, #01100011B
+0038 75F00A           10     MOV B,#10
+003B 7820             11     MOV R0,#20H
+003D 1130             12     ACALL BCD
+003F 75F001           13     MOV B,#1
+0042 1130             14     ACALL BCD
+0044 80FE             15     SJMP  $
+                      16     END
+A51 MACRO ASSEMBLER  2                                                                    04/15/2021 19:22:16 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+BCD. . . . . . . .  C ADDR   0030H   A   
+MAIN . . . . . . .  C ADDR   0036H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

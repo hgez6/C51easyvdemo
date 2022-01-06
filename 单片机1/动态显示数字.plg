@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+G:\Àú³Ì\µ¥Æ¬»ú1\¶¯Ì¬ÏÔÊ¾Êı×Ö.uvproj
+Project File Date:  05/16/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling ÊıÂë¹Ü.c...
+linking...
+Program Size: data=18.0 xdata=0 code=528
+"¶¯Ì¬ÏÔÊ¾Êı×Ö" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling ÊıÂë¹Ü.c...
+linking...
+Program Size: data=18.0 xdata=0 code=528
+creating hex file from "¶¯Ì¬ÏÔÊ¾Êı×Ö"...
+"¶¯Ì¬ÏÔÊ¾Êı×Ö" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling ÊıÂë¹Ü.c...
+ÊÂë¹Ü.C(14): error C141: syntax error near '!'
+ÊÂë¹Ü.C(14): error C141: syntax error near 'a686964616fe58685e5aeb931333363396365'
+ÊÂë¹Ü.C(14): error C202: 'a686964616fe58685e5aeb931333363396365': undefined identifier
+ÊÂë¹Ü.C(14): error C141: syntax error near ')'
+ÊÂë¹Ü.C(65): error C202: 'keyin': undefined identifier
+ÊÂë¹Ü.C(68): error C202: 'keyin': undefined identifier
+ÊÂë¹Ü.C(69): error C202: 'keyin': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling ÊıÂë¹Ü.c...
+ÊÂë¹Ü.C(14): error C141: syntax error near '!'
+ÊÂë¹Ü.C(14): error C141: syntax error near 'a686964616fe58685e5aeb931333363396365'
+ÊÂë¹Ü.C(14): error C202: 'a686964616fe58685e5aeb931333363396365': undefined identifier
+ÊÂë¹Ü.C(14): error C141: syntax error near ')'
+ÊÂë¹Ü.C(65): error C202: 'keyin': undefined identifier
+ÊÂë¹Ü.C(68): error C202: 'keyin': undefined identifier
+ÊÂë¹Ü.C(69): error C202: 'keyin': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling Êı×ÖÏÔÊ¾.c...
+Ê×ÖÏÔÊ¾.C(14): error C141: syntax error near '!'
+Ê×ÖÏÔÊ¾.C(14): error C141: syntax error near 'a686964616fe58685e5aeb931333363396365'
+Ê×ÖÏÔÊ¾.C(14): error C202: 'a686964616fe58685e5aeb931333363396365': undefined identifier
+Ê×ÖÏÔÊ¾.C(14): error C141: syntax error near ')'
+Ê×ÖÏÔÊ¾.C(65): error C202: 'keyin': undefined identifier
+Ê×ÖÏÔÊ¾.C(68): error C202: 'keyin': undefined identifier
+Ê×ÖÏÔÊ¾.C(69): error C202: 'keyin': undefined identifier
+Target not created

@@ -1,0 +1,43 @@
+C51 COMPILER V9.01   UART                                                                  08/12/2020 09:36:03 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN UART.OBJ
+COMPILER INVOKED BY: D:\KEIL\C51\BIN\C51.EXE UART.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          void UART_Init()
+   3          {
+   4   1           SCON=0x50; //允许接收
+   5   1               PCON |= 0x80;
+   6   1               TMOD &= 0x0F;          //设置定时器模式
+   7   1              TMOD |= 0x20;           //设置定时器模式
+   8   1          TL1 = 0xF3;         //设定定时初值
+   9   1              TH1 = 0xF3;     //设置定时初值  
+  10   1              ET1=0;
+  11   1              TR1 = 1;
+  12   1              EA=1;
+  13   1              ES=1;           //启动定时器1
+  14   1      }
+  15          void UART_SendByte(unsigned char Byte)
+  16          {
+  17   1              SBUF=Byte;
+  18   1          while(TI==0);
+  19   1              TI=0;
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     35    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"数码管.obj" 
+TO "动态显示数字" 
+RAMSIZE(256) 

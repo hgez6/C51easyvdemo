@@ -1,0 +1,85 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+F:\历程\单片机1\单机7.uvproj
+Project File Date:  01/04/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 7.c...
+7.C(12): warning C206: 'delay': missing function-prototype
+7.C(12): error C267: 'delay': requires ANSI-style prototype
+7.C(15): error C202: 'start': undefined identifier
+7.C(24): error C202: 'start': undefined identifier
+7.C(30): error C231: 'delay': redefinition
+7.C(32): error C231: 'delay': redefinition
+7.C(51): error C202: 'start': undefined identifier
+7.C(70): error C202: 'i': undefined identifier
+7.C(80): error C202: 'a': undefined identifier
+7.C(85): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 7.c...
+7.C(72): error C202: 'i': undefined identifier
+7.C(82): error C202: 'a': undefined identifier
+7.C(87): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 7.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=215
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=215
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=215
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=222
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=224
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?7
+Program Size: data=11.0 xdata=0 code=224
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+Program Size: data=11.0 xdata=0 code=202
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 7.c...
+linking...
+Program Size: data=11.0 xdata=0 code=335
+creating hex file from "单机7"...
+"单机7" - 0 Error(s), 0 Warning(s).

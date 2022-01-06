@@ -1,0 +1,126 @@
+C51 COMPILER V9.01   FX                                                                    05/16/2020 12:50:41 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE FX
+OBJECT MODULE PLACED IN fx.OBJ
+COMPILER INVOKED BY: D:\KEIL\C51\BIN\C51.EXE fx.c DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define uint unsigned int
+   3          #define uchar unsigned char
+   4          sbit LA=P2^2;
+   5          sbit LB=P2^3;
+   6          sbit LC=P2^4;
+   7          uchar hds[8];
+   8          uchar key;  
+   9          uint i=0;
+  10          uint c=0;
+  11          uchar code xs[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+  12          void delay(uint b)
+  13          { 
+  14   1      while(b--);
+  15   1      }
+  16          void keyd()
+  17          {        
+  18   1        char a=0;
+  19   1        P1=0x0f;
+  20   1        if(P1!=0x0f)
+  21   1        { delay(1000);
+  22   2          c++;
+  23   2          if(P1!=0x0f)
+  24   2              {switch(P1)
+  25   3              {
+  26   4                case(0x07):key=0;break;
+  27   4                case(0x0b):key=1;break;
+  28   4                case(0x0d):key=2;break;
+  29   4                case(0x0e):key=3;break;
+  30   4                }
+  31   3                P1=0xf0;
+  32   3                switch(P1)
+  33   3              {
+  34   4                case(0x70):key=key;break;
+  35   4                case(0xb0):key=key+4;break;
+  36   4                case(0xe0):key=key+8;break;
+  37   4                case(0xd0):key=key+12;break;
+  38   4              }
+  39   3              while((a<50) && (P1!=0xf0))
+  40   3              {
+  41   4              delay(1000);
+  42   4              a++;
+  43   4              }
+  44   3                }
+  45   2                }
+  46   1                }
+  47                  
+  48          
+  49          
+  50          void hd()
+  51          {        
+  52   1      for(i=0;i<c;i++)
+  53   1         {
+  54   2           switch(c)
+  55   2               {
+C51 COMPILER V9.01   FX                                                                    05/16/2020 12:50:41 PAGE 2   
+
+  56   3               case (8):
+  57   3               LA=0;LB=0;LC=0;break;
+  58   3               case (7):
+  59   3               LA=1;LB=0;LC=0;break;
+  60   3               case (6):
+  61   3                LA=0;LB=1;LC=0;break;
+  62   3                case (5):
+  63   3                LA=1;LB=1;LC=0;break;
+  64   3                case (4):
+  65   3                LA=0;LB=0;LC=1;break;
+  66   3                case (3):
+  67   3                LA=1;LB=0;LC=1;break;
+  68   3                case (2):
+  69   3                LA=0;LB=1;LC=1;break;
+  70   3                case (1):
+  71   3                LA=1;LB=1;LC=1;break;
+  72   3                }
+  73   2                P0=hds[i];
+  74   2                delay(100); //间隔一段时间扫描        
+  75   2                P0=0x00;//消隐
+  76   2                }
+  77   1                }
+  78                    
+  79          
+  80          
+  81          
+  82                   
+  83                   
+  84          
+  85          void main()
+  86          {
+  87   1         while(1)
+  88   1         {
+  89   2         hds[1]=0x00;
+  90   2         hds[2]=0x00;
+  91   2         hds[3]=0x00;
+  92   2         hds[4]=0x00;
+  93   2         keyd();
+  94   2         hds[1]=xs[key];
+  95   2         hds[2]=xs[key];
+  96   2         hds[3]=xs[key];
+  97   2         hds[4]=xs[key];
+  98   2         
+  99   2         
+ 100   2         }
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    321    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     13       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

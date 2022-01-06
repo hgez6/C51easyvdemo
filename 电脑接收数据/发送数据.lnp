@@ -1,0 +1,4 @@
+"发送.obj",
+"UART.obj" 
+TO "发送数据" 
+RAMSIZE(256) 

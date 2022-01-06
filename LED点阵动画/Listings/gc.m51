@@ -1,0 +1,177 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/19/2020  20:38:32  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\delay.obj, .\Objects\led64.obj TO .\Objects\gc PRINT (.\Listings
+>> \gc.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\delay.obj (DELAY)
+  .\Objects\led64.obj (LED64)
+  D:\KEIL5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\gc (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     003DH     UNIT         ?PR?MAIN?MAIN
+            CODE    083DH     002DH     UNIT         ?PR?_HC595WRITE?LED64
+            CODE    086AH     0022H     UNIT         ?PR?_LED64XS?LED64
+            CODE    088CH     0018H     UNIT         ?CO?MAIN
+            CODE    08A4H     0015H     UNIT         ?PR?_DELAY?DELAY
+            CODE    08B9H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08C5H     0005H     UNIT         ?PR?LED64INIT?LED64
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\gc (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0003H
+  +--> ?PR?LED64INIT?LED64
+  +--> ?CO?MAIN
+  +--> ?PR?_LED64XS?LED64
+
+?PR?_LED64XS?LED64             -----    -----
+  +--> ?PR?_HC595WRITE?LED64
+  +--> ?PR?_DELAY?DELAY
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/19/2020  20:38:32  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\gc (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        main
+  C:088CH         PUBLIC        sj
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        j
+  D:000AH         SYMBOL        count
+  -------         ENDDO         
+  C:0800H         LINE#         9
+  C:0800H         LINE#         10
+  C:0800H         LINE#         11
+  C:0803H         LINE#         13
+  C:0803H         LINE#         14
+  C:0806H         LINE#         15
+  C:0806H         LINE#         16
+  C:0816H         LINE#         17
+  C:081FH         LINE#         18
+  C:0821H         LINE#         19
+  C:0828H         LINE#         20
+  C:082BH         LINE#         21
+  C:0831H         LINE#         22
+  C:0831H         LINE#         23
+  C:0838H         LINE#         24
+  C:083BH         LINE#         25
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:08A4H         PUBLIC        _delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:08A4H         LINE#         1
+  C:08A4H         LINE#         2
+  C:08A4H         LINE#         4
+  C:08AEH         LINE#         5
+  C:08AEH         LINE#         6
+  C:08B0H         LINE#         7
+  C:08B2H         LINE#         9
+  C:08B2H         LINE#         10
+  C:08B4H         LINE#         11
+  C:08B6H         LINE#         12
+  C:08B8H         LINE#         13
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/19/2020  20:38:32  PAGE 3
+
+
+
+  -------         MODULE        LED64
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00B0H         PUBLIC        P3
+  C:086AH         PUBLIC        _led64xs
+  C:083DH         PUBLIC        _hc595write
+  C:08C5H         PUBLIC        led64init
+  B:00B0H.5       PUBLIC        RCK
+  B:00B0H.6       PUBLIC        SCK
+  B:00B0H.4       PUBLIC        SER
+  -------         PROC          _HC595WRITE
+  D:0005H         SYMBOL        b
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:083DH         LINE#         7
+  C:083FH         LINE#         8
+  C:083FH         LINE#         9
+  C:0841H         LINE#         10
+  C:0841H         LINE#         11
+  C:085DH         LINE#         12
+  C:085FH         LINE#         13
+  C:0861H         LINE#         14
+  C:0865H         LINE#         15
+  C:0867H         LINE#         16
+  C:0869H         LINE#         17
+  -------         ENDPROC       _HC595WRITE
+  -------         PROC          _LED64XS
+  D:0002H         SYMBOL        column
+  D:0004H         SYMBOL        row
+  C:086AH         LINE#         18
+  C:086CH         LINE#         19
+  C:0871H         LINE#         20
+  C:0881H         LINE#         21
+  C:0888H         LINE#         22
+  C:088BH         LINE#         23
+  -------         ENDPROC       _LED64XS
+  -------         PROC          LED64INIT
+  C:08C5H         LINE#         24
+  C:08C5H         LINE#         25
+  C:08C5H         LINE#         26
+  C:08C7H         LINE#         27
+  C:08C9H         LINE#         28
+  -------         ENDPROC       LED64INIT
+  -------         ENDMOD        LED64
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BEH BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=205
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

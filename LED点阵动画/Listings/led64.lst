@@ -1,0 +1,52 @@
+C51 COMPILER V9.54   LED64                                                                 08/19/2020 20:38:32 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE LED64
+OBJECT MODULE PLACED IN .\Objects\led64.obj
+COMPILER INVOKED BY: D:\keil5\C51\BIN\C51.EXE led64.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\led64
+                    -.lst) TABS(2) OBJECT(.\Objects\led64.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "delay.h"
+   3          
+   4          sbit RCK=P3^5;
+   5          sbit SCK=P3^6;
+   6          sbit SER=P3^4;
+   7          void hc595write(unsigned char b)
+   8          {  unsigned char i;
+   9   1        for(i=0;i<8;i++)
+  10   1        {
+  11   2          SER=b&(0x80>>i);
+  12   2          SCK=1;
+  13   2          SCK=0;
+  14   2        }
+  15   1        RCK=1;
+  16   1        RCK=0;
+  17   1      } 
+  18          void led64xs(unsigned char column,row)
+  19          {   hc595write(row);
+  20   1          P0=~(0x80>>column);
+  21   1          delay(1);
+  22   1          P0=0xFF;  
+  23   1      }
+  24          void led64init()
+  25          {
+  26   1        SCK=0;
+  27   1        RCK=0;  
+  28   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     84    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

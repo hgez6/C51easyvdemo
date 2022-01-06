@@ -1,0 +1,156 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/12/2020  08:09:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE ¼ÌµçÆ÷.obj, UART.obj TO ¼ÌµçÆ÷
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ¼ÌµçÆ÷.obj (¼ÌµçÆ÷)
+  UART.obj (UART)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  ¼ÌµçÆ÷ (¼ÌµçÆ÷)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?¼ÌµçÆ÷
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0020H     UNIT         ?PR?_DELAY?¼ÌµçÆ÷
+            CODE    08ACH     0017H     UNIT         ?PR?UART_INIT?UART
+            CODE    08C3H     0013H     UNIT         ?PR?MAIN?¼ÌµçÆ÷
+            CODE    08D6H     0008H     UNIT         ?PR?_UART_SENDBYTE?UART
+            CODE    08DEH     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   ¼ÌµçÆ÷ (¼ÌµçÆ÷)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?¼ÌµçÆ÷
+  +--> ?C_INITSEG
+
+?PR?MAIN?¼ÌµçÆ÷
+  +--> ?PR?UART_INIT?UART
+  +--> ?PR?_UART_SENDBYTE?UART
+  +--> ?PR?_DELAY?¼ÌµçÆ÷
+
+
+
+SYMBOL TABLE OF MODULE:  ¼ÌµçÆ÷ (¼ÌµçÆ÷)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/12/2020  08:09:11  PAGE 2
+
+
+
+  -------         MODULE        ¼ÌµçÆ÷
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:088CH         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:08C3H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        sec
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:088CH         LINE#         5
+  C:088CH         LINE#         6
+  C:088CH         LINE#         8
+  C:0896H         LINE#         9
+  C:08ABH         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:08C3H         LINE#         12
+  C:08C3H         LINE#         13
+  C:08C3H         LINE#         14
+  C:08C6H         LINE#         16
+  C:08C6H         LINE#         17
+  C:08C6H         LINE#         18
+  C:08CBH         LINE#         19
+  C:08CDH         LINE#         20
+  C:08D4H         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ¼ÌµçÆ÷
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  C:08ACH         PUBLIC        UART_Init
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:08D6H         PUBLIC        _UART_SendByte
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/12/2020  08:09:11  PAGE 3
+
+
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          UART_INIT
+  C:08ACH         LINE#         2
+  C:08ACH         LINE#         3
+  C:08ACH         LINE#         4
+  C:08AFH         LINE#         5
+  C:08B2H         LINE#         6
+  C:08B5H         LINE#         7
+  C:08B8H         LINE#         8
+  C:08BBH         LINE#         9
+  C:08BEH         LINE#         10
+  C:08C0H         LINE#         11
+  C:08C2H         LINE#         12
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_SENDBYTE
+  D:0007H         SYMBOL        Byte
+  C:08D6H         LINE#         13
+  C:08D6H         LINE#         14
+  C:08D6H         LINE#         15
+  C:08D8H         LINE#         16
+  C:08DBH         LINE#         17
+  C:08DDH         LINE#         18
+  -------         ENDPROC       _UART_SENDBYTE
+  -------         ENDMOD        UART
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0055H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=10.0 xdata=0 code=229
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

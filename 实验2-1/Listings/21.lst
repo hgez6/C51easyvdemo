@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  21                                                                   04/15/2021 19:10:54 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\21.obj
+ASSEMBLER INVOKED BY: D:\keil5\C51\BIN\A51.EXE 21.asm SET(SMALL) DEBUG PRINT(.\Listings\21.lst) OBJECT(.\Objects\21.obj)
+                       EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020030            2     LJMP MAIN
+0030                   3     ORG 0030H
+0030                   4     MAIN:
+0030 758120            5     MOV SP,#20H
+0033 7832              6     MOV R0,#32H
+0035 7942              7     MOV R1,#42H
+0037 753201            8     MOV 32H,#01
+003A 753102            9     MOV 31H,#02
+003D 754203           10     MOV 42H,#03
+0040 754104           11     MOV 41H,#04
+0043 7A02             12     MOV R2,#2
+0045 12004A           13     LCALL SAD
+0048 8650             14     MOV 50H,@R0
+004A C3               15     SAD: CLR C 
+004B E6               16          MOV    A,@R0     
+004C 37               17          ADDC   A,@R1     
+004D F6               18          MOV    @R0,A     
+004E 18               19          DEC    R0
+004F 19               20          DEC    R1
+0050 DAF8             21          DJNZ   R2,SAD
+0052 08               22          INC    R0       
+0053 22               23          RET  
+                      24     END
+                             
+A51 MACRO ASSEMBLER  21                                                                   04/15/2021 19:10:54 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+MAIN . . . . . . .  C ADDR   0030H   A   
+SAD. . . . . . . .  C ADDR   004AH   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

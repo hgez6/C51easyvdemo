@@ -1,0 +1,44 @@
+C51 COMPILER V9.01   SHUMAG                                                                05/15/2020 19:16:30 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SHUMAG
+OBJECT MODULE PLACED IN shumag.OBJ
+COMPILER INVOKED BY: D:\KEIL\C51\BIN\C51.EXE shumag.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define uint unsigned int
+   3          #define uchar unsigned char 
+   4          uint i;
+   5          uchar code xs[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+   6          void delay(uint b)
+   7          { 
+   8   1      while(b--);
+   9   1      }
+  10          void main()
+  11          {
+  12   1        
+  13   1         while(1)
+  14   1         {
+  15   2         for(i=0;i<=9;i++)
+  16   2         {
+  17   3         P0=xs[i];
+  18   3         delay(15000);
+  19   3         }
+  20   2         }
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     50    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

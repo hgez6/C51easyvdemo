@@ -1,0 +1,25 @@
+ORG 0000H
+LJMP MAIN
+ORG 0030H
+MAIN:
+MOV SP,#20H
+MOV R0,#32H
+MOV R1,#42H
+MOV 32H,#01
+MOV 31H,#02
+MOV 42H,#03
+MOV 41H,#04
+MOV R2,#2
+LCALL SAD
+MOV 50H,@R0
+SAD: CLR C 
+     MOV    A,@R0     
+     ADDC   A,@R1     
+     MOV    @R0,A     
+     DEC    R0
+     DEC    R1
+     DJNZ   R2,SAD
+     INC    R0       
+     RET  
+END
+

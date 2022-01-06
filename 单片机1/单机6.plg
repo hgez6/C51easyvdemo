@@ -1,0 +1,221 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+F:\历程\单片机1\单机6.uvproj
+Project File Date:  01/04/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=13.0 xdata=0 code=165
+"单机6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=13.0 xdata=0 code=165
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+6.C(16): error C141: syntax error near 'else'
+6.C(55): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(55): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(55): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(55): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(55): error C141: syntax error near 'void'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_KS?6
+Program Size: data=15.0 xdata=0 code=186
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+6.C(22): error C141: syntax error near '100'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(23): error C141: syntax error near 'unsigned'
+6.C(23): error C202: 'i': undefined identifier
+6.C(29): error C202: 'a': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(23): error C141: syntax error near 'unsigned'
+6.C(23): error C202: 'i': undefined identifier
+6.C(29): error C202: 'a': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(24): error C211: call not to a function
+6.C(24): error C208: 'function': too many actual parameters
+6.C(37): error C211: call not to a function
+6.C(37): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(24): error C211: call not to a function
+6.C(24): error C208: 'function': too many actual parameters
+6.C(37): error C211: call not to a function
+6.C(37): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(24): error C211: call not to a function
+6.C(24): error C208: 'function': too many actual parameters
+6.C(24): error C141: syntax error near '100'
+6.C(37): error C211: call not to a function
+6.C(37): error C208: 'function': too many actual parameters
+6.C(37): error C141: syntax error near '0'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(24): error C211: call not to a function
+6.C(24): error C208: 'function': too many actual parameters
+6.C(24): error C141: syntax error near '100'
+6.C(37): error C211: call not to a function
+6.C(37): error C208: 'function': too many actual parameters
+6.C(37): error C141: syntax error near '0'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(24): error C211: call not to a function
+6.C(24): error C208: 'function': too many actual parameters
+6.C(37): error C211: call not to a function
+6.C(37): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(27): error C211: call not to a function
+6.C(27): error C208: 'function': too many actual parameters
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(27): error C211: call not to a function
+6.C(27): error C208: 'function': too many actual parameters
+6.C(27): error C141: syntax error near '100'
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(16): error C169: '__ks': function returns function
+6.C(17): error C202: 'z': undefined identifier
+6.C(27): error C211: call not to a function
+6.C(27): error C208: 'function': too many actual parameters
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(27): error C211: call not to a function
+6.C(27): error C208: 'function': too many actual parameters
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(27): error C211: call not to a function
+6.C(27): error C208: 'function': too many actual parameters
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(40): error C211: call not to a function
+6.C(40): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(19): error C141: syntax error near '{'
+6.C(21): error C231: '_sound': redefinition
+6.C(22): error C141: syntax error near 'else'
+6.C(26): error C231: '_ks': redefinition
+6.C(26): error C231: '_ks': redefinition
+6.C(27): error C141: syntax error near '1'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(17): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(41): error C211: call not to a function
+6.C(41): error C208: 'function': too many actual parameters
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+6.C(22): warning C290: missing return value
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KS?6
+Program Size: data=9.0 xdata=0 code=154
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+6.C(28): error C211: call not to a function
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?6
+Program Size: data=11.0 xdata=0 code=150
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+6.C(26): error C141: syntax error near 'unsigned'
+6.C(26): error C202: 'i': undefined identifier
+6.C(31): error C202: 'a': undefined identifier
+6.C(40): error C202: 'i': undefined identifier
+6.C(50): error C202: 'a': undefined identifier
+6.C(55): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=11.0 xdata=0 code=164
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=13.0 xdata=0 code=179
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+linking...
+Program Size: data=11.0 xdata=0 code=180
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 6.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SOUND?6
+Program Size: data=11.0 xdata=0 code=168
+creating hex file from "单机6"...
+"单机6" - 0 Error(s), 1 Warning(s).

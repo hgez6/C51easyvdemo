@@ -1,0 +1,26 @@
+#include <REGX52.H>
+#include "delay.h"
+#include "led64.h"
+unsigned char code sj[]={
+	
+0x3C,0x42,0xA9,0x85,0x85,0xA9,0x42,0x3C,
+0x3C,0x42,0xA1,0x85,0x85,0xA1,0x42,0x3C,
+0x3C,0x42,0xA5,0x89,0x89,0xA5,0x42,0x3C};
+void main()
+{     unsigned char i,j,count; 
+	led64init();
+      while(1)
+     {  for(i=0;i<8;i++)
+			 { 
+				 led64xs(i,sj[i+j]);
+			 }
+     count++;
+     if(count>15)
+		 {  count=0;
+			  j+=8;		 
+		 }
+if(j>16)
+j=0;	
+     }
+}
+

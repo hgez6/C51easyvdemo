@@ -1,0 +1,110 @@
+C51 COMPILER V9.54   MAIN                                                                  08/26/2020 15:12:32 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\keil5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.l
+                    -st) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "delay.h"
+   3          #include "timer0.h"
+   4          sbit bz=P1^5;
+   5          #define P 0
+   6          #define L1 1
+   7          #define L1_ 2
+   8          #define L2 3
+   9          #define L2_ 4
+  10          #define L3 5
+  11          #define L4 6
+  12          #define L4_ 7
+  13          #define L5 8
+  14          #define L5_ 9
+  15          #define L6 10
+  16          #define L6_ 11
+  17          #define L7 12
+  18          #define M1 13
+  19          #define M1_ 14
+  20          #define M2 15
+  21          #define M2_ 16
+  22          #define M3  17
+  23          #define M4 18
+  24          #define M4_ 19
+  25          #define M5 20
+  26          #define M5_ 21
+  27          #define M6 22
+  28          #define M6_ 23
+  29          #define M7 24
+  30          #define H1 25
+  31          #define H1_ 26
+  32          #define H2 27
+  33          #define H2_ 28
+  34          #define H3 29
+  35          #define H4 30
+  36          #define H4_ 31
+  37          #define H5 32
+  38          #define H5_ 33
+  39          #define H6 34
+  40          #define H6_ 35
+  41          #define H7  36
+  42          
+  43          unsigned int freq[]={0,63628,63731,63835,53928,64021,64103,64185,64260,64331,64400,64463,64528
+  44          ,64580,64633,64684,64732,64777,64820,64860,64898,64934,64968,65000,65030
+  45          ,65058,65085,65110,65134,65157,65178,65198,65217,65235,65252,65268,65283 };
+  46          unsigned char freqs,pages; 
+  47          unsigned char code page[]={P,4,P,4,P,4,M6,2,M7,2,
+  48          H1,6,M7,2,H1,4,H3,4,
+  49          M7,12,M3,2,M3,2,
+  50          90};
+  51          void main()
+  52          {    Timer0Init();
+  53   1            while(1)
+  54   1           {
+C51 COMPILER V9.54   MAIN                                                                  08/26/2020 15:12:32 PAGE 2   
+
+  55   2             if(page[pages]!=90)
+  56   2             {
+  57   3              freqs=page[pages]; 
+  58   3             pages++;
+  59   3             delay(125*pages);
+  60   3             pages++;
+  61   3             TR0=0;
+  62   3             delay(5);
+  63   3              TR0=1;       
+  64   3             }
+  65   2             else 
+  66   2             {
+  67   3                   TR0=0; delay(500); pages=0;
+  68   3      //      while(1);
+  69   3             }
+  70   2      
+  71   2           
+  72   2            }
+  73   1      }
+  74          
+  75          void Timer0_Routine() interrupt 1
+  76          { if(freq[freqs])
+  77   1        {
+  78   2        TL0 = freq[freqs]%256;    //设置定时初值
+  79   2        TH0 = freq[freqs]/256;    //设置定时初值
+  80   2        bz=!bz;
+  81   2        }
+  82   1      }
+  83          
+  84          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    111    ----
+   CONSTANT SIZE    =     25    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     76    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

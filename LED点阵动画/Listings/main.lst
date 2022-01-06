@@ -1,0 +1,51 @@
+C51 COMPILER V9.54   MAIN                                                                  08/19/2020 20:38:32 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\keil5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.l
+                    -st) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "delay.h"
+   3          #include "led64.h"
+   4          unsigned char code sj[]={
+   5            
+   6          0x3C,0x42,0xA9,0x85,0x85,0xA9,0x42,0x3C,
+   7          0x3C,0x42,0xA1,0x85,0x85,0xA1,0x42,0x3C,
+   8          0x3C,0x42,0xA5,0x89,0x89,0xA5,0x42,0x3C};
+   9          void main()
+  10          {     unsigned char i,j,count; 
+  11   1        led64init();
+  12   1      
+  13   1            while(1)
+  14   1           {  for(i=0;i<8;i++)
+  15   2             { 
+  16   3               led64xs(i,sj[i+j]);
+  17   3             }
+  18   2           count++;
+  19   2           if(count>15)
+  20   2           {  count=0;
+  21   3              j+=8;    
+  22   3           }
+  23   2      if(j>16)
+  24   2      j=0;  
+  25   2           }
+  26   1      }
+  27          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     61    ----
+   CONSTANT SIZE    =     24    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

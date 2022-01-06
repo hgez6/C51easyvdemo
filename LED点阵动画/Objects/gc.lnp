@@ -1,0 +1,5 @@
+".\Objects\main.obj",
+".\Objects\delay.obj",
+".\Objects\led64.obj" 
+TO ".\Objects\gc" 
+PRINT(".\Listings\gc.m51") RAMSIZE(256) 

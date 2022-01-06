@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+G:\Àú³Ì\LCDmodule\LCD.uvproj
+Project File Date:  08/14/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling LCD.c...
+LCD.C(6): warning C206: 'LCD_Showchar': missing function-prototype
+LCD.C(6): error C267: 'LCD_Showchar': requires ANSI-style prototype
+compiling LCD1602.c...
+Target not created
